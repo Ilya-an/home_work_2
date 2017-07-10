@@ -9,13 +9,12 @@ using namespace std;
 class Modem
 {
     string name;
-    string manufacturer;  //ABIT,ACORP,ASUSTEK,GIGABITE,INTEL,ELITEGROUP
-    string type;// (Pentium,PII,PIII,Athlon) Поколение процессора
-    int price; // BabyAT=1,AT,ATX,WTX
-    bool internalisers; //  Интегрированная ли плата или нет (т.е. со встроенной звуковой/видео картой)
+    string manufacturer;
+    string type;
+    int price;
+    bool internalisers;
     public:
-        enum interface
-        {
+        enum interface {
             COM = 1, ExpressCard, PSI, PCMCIA, USB
         };
         interface connector;
@@ -30,12 +29,24 @@ class Modem
         void setBool (const bool flag);
 
 
-        string getName () const {return name;}
-        string getType () const {return type;}
-        interface getConn () const {return connector;}
-        string getManufacturer () const {return manufacturer;}
-        int getPrice () const {return price;}
-        bool getBool () const {return internalisers;}
+        string getName () const {
+			return name;
+		}
+        string getType () const {
+			return type;
+		}
+        interface getConn () const {
+			return connector;
+		}
+        string getManufacturer () const {
+			return manufacturer;
+		}
+        int getPrice () const {
+			return price;
+		}
+        bool getBool () const {
+			return internalisers;
+		}
 
         friend ostream& operator << (ostream& os, const Modem& mom);
 };
